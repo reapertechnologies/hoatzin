@@ -91,6 +91,10 @@ module Hoatzin
       @model.save(@model_file)
     end
 
+    def svm_model
+      @model
+    end
+
     protected
     def load
       data = {}
