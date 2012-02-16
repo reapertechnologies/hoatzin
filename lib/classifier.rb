@@ -20,8 +20,9 @@ module Hoatzin
 
       @metadata_file = options.delete(:metadata) || nil
       @model_file = options.delete(:model) || nil
+      @parser_tokenizer_method = options.delete(:tokenizer_method) || :tokenizer_ankusa
 
-      @builder = FeatureVector::Builder.new(:parser => Hoatzin::Parser.new)
+      @builder = FeatureVector::Builder.new(:parser => Hoatzin::Parser.new( @parser_tokenizer_method) )
 
       # If we have model and metadata files then load them
       load if @metadata_file && @model_file
