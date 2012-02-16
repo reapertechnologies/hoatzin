@@ -5,6 +5,7 @@ source "http://rubygems.org"
 
 gem 'libsvm-ruby-swig'
 gem 'fast-stemmer'
+gem 'gtokenizer'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

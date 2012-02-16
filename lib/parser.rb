@@ -1,11 +1,32 @@
+require 'gtokenizer'
+
 module Hoatzin
   class Parser
 
-    def initialize
+    @tokenize_method = nil
+
+    def initialize( tokenize_method = :tokenize_ankusa )
+      @tokenize_method = tokenize_method
+    end
+
+    def tokenize( text )
+      self.send( @tokenize_method, text )
+    end
+
+    def tokenize_gtokenizer( text )
+      token_list = []
+      parsed_tokens = GTokenizer.parse( text )
+
+      parsed_tokens.each do |token|
+        token = token.stem.downcase
+        token_list << token if (token.length > 3 && !stop_words.include?(token))
+      end
+
+      return token_list
     end
 
     # Adapted from ankusa, to replace with tokenizer gem
-    def tokenize text
+    def tokenize_ankusa text
       tokens = []
       # from http://www.jroller.com/obie/tags/unicode
       converter = Iconv.new('ASCII//IGNORE//TRANSLIT', 'UTF-8')
