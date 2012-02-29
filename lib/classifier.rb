@@ -20,7 +20,7 @@ module Hoatzin
 
       @metadata_file = options.delete(:metadata) || nil
       @model_file = options.delete(:model) || nil
-      @parser_tokenizer_method = options.delete(:tokenizer_method) || :tokenizer_ankusa
+      @parser_tokenizer_method = options.delete(:tokenizer_method) || :tokenize_ankusa
 
       @builder = FeatureVector::Builder.new(:parser => Hoatzin::Parser.new( @parser_tokenizer_method) )
 
