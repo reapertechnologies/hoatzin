@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestHoatzin < Test::Unit::TestCase
+class TestHoatzin < MiniTest::Unit::TestCase
 
   context "An untrained Hoatzin classifier" do
 
@@ -67,7 +67,11 @@ class TestHoatzin < Test::Unit::TestCase
     end
 
     should "allow further training" do
-      assert_nothing_raised {@c.train :positive, "Thats nice" }
+      begin
+        @c.train :positive, "Thats nice"
+      rescue
+        fail "Exception raised in 'train' method"
+      end
     end
 
   end

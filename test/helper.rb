@@ -7,14 +7,21 @@ rescue Bundler::BundlerError => e
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
-require 'test/unit'
+# require 'test/unit'
+
+require 'minitest/autorun'
 require 'shoulda'
+
+MiniTest.autorun
+
+require 'simplecov'
+SimpleCov.start
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'hoatzin'
 
-class Test::Unit::TestCase
+class MiniTest::Unit::TestCase
 
   TRAINING_LABELS = [1, 1, 0, 1, 1, 0, 0]
   TRAINING_DOCS = [
