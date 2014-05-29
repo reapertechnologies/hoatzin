@@ -1,8 +1,9 @@
 require 'svm'
-require 'fast_stemmer'
+require 'lingua/stemmer'
 require 'iconv'
 require 'pp'
 
+require 'string'
 require 'classifier'
 require 'parser'
 require 'feature_vector/model'

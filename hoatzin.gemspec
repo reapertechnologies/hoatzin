@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/feature_vector/model.rb",
     "lib/hoatzin.rb",
     "lib/parser.rb",
+    "lib/string.rb",
     "test/helper.rb",
     "test/models/readonly-test/metadata",
     "test/models/readonly-test/model",
@@ -48,20 +49,20 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<libsvm-ruby-swig>, [">= 0"])
-      s.add_runtime_dependency(%q<fast-stemmer>, [">= 0"])
+      s.add_runtime_dependency(%q<ruby-stemmer>, [">= 0"])
       s.add_runtime_dependency(%q<gtokenizer>, [">= 0"])
       s.add_runtime_dependency(%q<iconv>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<minitest>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, ["~> 0.7.1"])
     else
       s.add_dependency(%q<libsvm-ruby-swig>, [">= 0"])
-      s.add_dependency(%q<fast-stemmer>, [">= 0"])
+      s.add_dependency(%q<ruby-stemmer>, [">= 0"])
       s.add_dependency(%q<gtokenizer>, [">= 0"])
       s.add_dependency(%q<iconv>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<minitest>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -69,10 +70,10 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<libsvm-ruby-swig>, [">= 0"])
-    s.add_dependency(%q<fast-stemmer>, [">= 0"])
+    s.add_dependency(%q<ruby-stemmer>, [">= 0"])
     s.add_dependency(%q<gtokenizer>, [">= 0"])
     s.add_dependency(%q<iconv>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<minitest>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])

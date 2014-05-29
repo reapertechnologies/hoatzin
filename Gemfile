@@ -4,7 +4,7 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 gem 'libsvm-ruby-swig'
-gem 'fast-stemmer'
+gem 'ruby-stemmer'
 gem 'gtokenizer'
 gem 'iconv'
 
